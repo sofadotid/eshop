@@ -21,8 +21,9 @@ class MY_Loader extends MX_Loader {
            'THEMES_PAGE'    => base_url('themes/'.$this->themes)
         );        
         
-        $data['HEADER_SECTION']     = $this->parser->parse($this->themes.'/layout/header/header', $data, true);
-        $data['BODY_SECTION']       = '';//$this->parser->parse($this->themes.'/layout/content/body_layout', $data, true);
+        $data['HEADER_SECTION']     = $this->parser->parse($this->themes.'/layout/menu/main_menu', $data, true);
+        $data['HEADER_SECTION']     .= $this->parser->parse($this->themes.'/layout/header/header', $data, true);
+        $data['BODY_SECTION']       = $this->parser->parse($this->themes.'/layout/content/body_layout', $data, true);
         $data['FOOTER_SECTION']     = $this->parser->parse($this->themes.'/layout/footer/footer', $data, true);
         
         $this->parser->parse($this->themes.'/layout/main_layout', $data);
